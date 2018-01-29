@@ -17,7 +17,7 @@ namespace ThreadPoolExample
             for (int i = 0; i < FibonacciCalculations; i++)
             {
                 doneEvents[i] = new ManualResetEvent(false);
-                Fibonacci f = new Fibonacci(r.Next(20, 40), doneEvents[i]);
+                Fibonacci f = new Fibonacci(r.Next(20, 25), doneEvents[i]);
                 fibArray[i] = f;
                 ThreadPool.QueueUserWorkItem(f.ThreadPoolCallback, i);
             }
